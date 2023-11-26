@@ -4,12 +4,12 @@ from langchain.vectorstores import Chroma
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
-from langchain.document_loaders import UnstructuredFileLoader
+from langchain.document_loaders import UnstructuredPDFLoader
 import os
 
 # Chat UI title
 st.header("Upload your own files and ask questions like ChatGPT")
-st.subheader('File type supported: PDF/DOCX/TXT :city_sunrise:')
+st.subheader('File type supported: PDF :spiral_note_pad:')
 
 # Set OPENAI_API_KEY as an environment variable
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
