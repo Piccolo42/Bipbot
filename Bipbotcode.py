@@ -15,16 +15,11 @@ st.subheader('File type supported: PDF/DOCX/TXT :city_sunrise:')
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 llm = ChatOpenAI(temperature=0,max_tokens=1000, model_name="gpt-3.5-turbo",streaming=True)
-
-# Load version history from the text file
-def load_version_history():
-    with open("version_history.txt", "r") as file:
-        return file.read()
         
 with st.sidebar:
-    uploaded_files = st.file_uploader("Please upload your files", accept_multiple_files=True, type=None)
-    st.info(load_version_history(), icon="🤖")
-    st.info("Please refresh the browser if you decided to upload more files to reset the session", icon="🚨")
+    uploaded_files = st.file_uploader("Please upload your files", accept_multiple_files=True, type="pdf")
+    st.info("Please refresh the browser if you decided to upload more files")
+
 # Check if files are uploaded
 if uploaded_files:
     # Print the number of files to console
@@ -43,7 +38,7 @@ if uploaded_files:
                 f.write(uploaded_file.getvalue())
 
             # Use UnstructuredFileLoader to load the PDF file
-            loader = UnstructuredFileLoader(file_path)
+            loader = UnstructuredPDFLoader(file_path)
             loaded_documents = loader.load()
             print(f"Number of files loaded: {len(loaded_documents)}")
 
