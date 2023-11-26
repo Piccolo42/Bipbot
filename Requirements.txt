@@ -1,0 +1,15 @@
+langchain
+streamlit
+openai
+chromadb 
+tiktoken
+pypdf
+unstructured[all-docs]
+pdfminer
+poppler-utils
+pytube
+ffmpeg-python
+transformers
+pandas
+pyarrow
+pip
