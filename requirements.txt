@@ -12,4 +12,4 @@ ffmpeg-python
 transformers
 pandas
 pyarrow
-libgl1-mesa-glx
+libgl1
