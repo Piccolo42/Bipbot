@@ -13,4 +13,4 @@ transformers
 pandas
 pyarrow
 pip
-
+pyOpenGL
