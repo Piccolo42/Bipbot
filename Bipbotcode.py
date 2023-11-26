@@ -1,17 +1,17 @@
-!pip install langchain
-!pip install streamlit
-!pip installopenai
-!pip install chromadb 
-!pip install tiktoken
-!pip install pypdf
-!pip install unstructured[all-docs]
-!pip install pdfminer
-!pip install poppler-utils
-!pip install pytube
-!pip install ffmpeg-python
-!pip install transformers
-!pip install pandas
-!pip install pyarrow
+pip install langchain
+pip install streamlit
+pip installopenai
+pip install chromadb 
+pip install tiktoken
+pip install pypdf
+pip install unstructured[all-docs]
+pip install pdfminer
+pip install poppler-utils
+pip install pytube
+pip install ffmpeg-python
+pip install transformers
+pip install pandas
+pip install pyarrow
 
 import streamlit as st
 from langchain.embeddings.openai import OpenAIEmbeddings
