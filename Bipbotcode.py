@@ -11,15 +11,8 @@ import os
 st.header("Upload your own files and ask questions like ChatGPT")
 st.subheader('File type supported: PDF/DOCX/TXT :city_sunrise:')
 
-# File uploader in the sidebar on the left
-with st.sidebar:
-    openai_api_key = st.text_input("OpenAI API Key", type="password")
-if not openai_api_key:
-    st.info("Please add your OpenAI API key to continue.")
-    st.stop()
-
 # Set OPENAI_API_KEY as an environment variable
-os.environ["OPENAI_API_KEY"] = openai_api_key
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 llm = ChatOpenAI(temperature=0,max_tokens=1000, model_name="gpt-3.5-turbo",streaming=True)
 
